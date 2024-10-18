@@ -1,0 +1,46 @@
+
+# Definición de los juegos
+games = {}
+games['pong'] = {'año': '1984', 'genero': 'arcade', 'consola': 'atari'}
+games['alex kid 1 '] = {'año': '1990', 'genero': 'arcade', 'consola': 'atari'}
+games['soul reaver'] = {'año': '1996', 'genero': 'aventuras', 'consola': 'atari'}
+games['warzone'] = {'año': '2023', 'genero': 'Shoot them up', 'consola': 'atari'}
+
+# Imprimir detalles de cada juego
+for game, details in games.items():
+    año = details['año']
+    genero = details['genero']
+    consola = details['consola']
+    print(f"Juego: {game.title()}, Año: {año}, Género: {genero}, Consola: {consola}")
+
+# Imprimir el año de cada juego
+pong='pong' #no es necesario crear nuevo valor... podriamos hacerlo con strings como se hace con los 2 restantes
+alex_kid='alex kid 1 '
+print(f"\nAño de {pong.title()}: {games['pong']['año']}")
+print(f"\nAño de {alex_kid.upper().rstrip()}: {games['alex kid 1 ']['año']}")
+print(f"Año de 'soul reaver': {games['soul reaver']['año']}")
+print(f"Año de 'warzone': {games['warzone']['año']}\n")
+
+# Imprimir juegos más antiguos de 1990
+print("Juegos más antiguos de 1990:")
+oldest = False  # Bandera para verificar si se encontraron juegos antiguos
+
+for game, details in games.items():
+    if int(details['año']) < 2000:  # Filtrar juegos antes de 1991 la entrada int cambia el string en numero para poder ser empleado como numero ya que es un string en biblioteca
+        print(f"Juego: {game.title()}, Año: {details['año']}")
+        oldest = True
+
+if not oldest:
+    print("No hay juegos más antiguos de 1991.")
+
+# Imprimir los juegos que son de 1991 o más recientes
+print("\nJuegos de 1991 o más recientes:")
+for game, details in games.items():
+    if int(details['año']) >= 1991:  # Filtrar juegos de 1991 o más recientes
+        print(f"Juego: {game.title()}, Año: {details['año']}")
+
+
+# Bucle para verificar el género de los juegos
+for game, details in games.items():
+    if details['genero'] == 'arcade':
+        print(f"\n{game.title()} eran los mejores juegos.")
