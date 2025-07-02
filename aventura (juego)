@@ -1,0 +1,41 @@
+def aventura():
+    print("¡Bienvenido a la aventura en el bosque!")
+    print("Estás en un bosque misterioso y tienes dos caminos delante.")
+    print("¿Cuál camino eliges? (izquierda/derecha)")
+
+    eleccion1 = input("> ").lower()
+
+    if eleccion1 == "izquierda":
+        print("Vas por el camino izquierdo y encuentras un río.")
+        print("¿Quieres cruzar el río o seguir caminando junto a él? (cruzar/seguir)")
+
+        eleccion2 = input("> ").lower()
+
+        if eleccion2 == "cruzar":
+            print("Intentas cruzar el río, pero la corriente es fuerte y te lleva.")
+            print("¡Fin de la aventura! Mejor suerte la próxima vez.")
+        elif eleccion2 == "seguir":
+            print("Sigues el río y encuentras una aldea amigable.")
+            print("¡Has encontrado un lugar seguro! ¡Ganaste la aventura!")
+        else:
+            print("Esa opción no es válida. Fin de la aventura.")
+
+    elif eleccion1 == "derecha":
+        print("Vas por el camino derecho y te encuentras con un lobo feroz.")
+        print("¿Quieres pelear o correr? (pelear/correr)")
+
+        eleccion2 = input("> ").lower()
+
+        if eleccion2 == "pelear":
+            print("Luchas valientemente, pero el lobo es muy fuerte.")
+            print("¡Fin de la aventura! Mejor suerte la próxima vez.")
+        elif eleccion2 == "correr":
+            print("Corres tan rápido que logras escapar.")
+            print("Encuentras la salida del bosque. ¡Ganaste la aventura!")
+        else:
+            print("Esa opción no es válida. Fin de la aventura.")
+    else:
+        print("Esa opción no es válida. Fin de la aventura.")
+
+if __name__ == "__main__":
+    aventura()
