@@ -1,41 +1,41 @@
-def aventura():
-    print("¡Bienvenido a la aventura en el bosque!")
-    print("Estás en un bosque misterioso y tienes dos caminos delante.")
-    print("¿Cuál camino eliges? (izquierda/derecha)")
+def adventure():
+    print("Welcome to the forest adventure!")
+    print("You are in a mysterious forest and have two paths ahead.")
+    print("Which path do you choose? (left/right)")
 
-    eleccion1 = input("> ").lower()
+    choice1 = input("> ").lower()
 
-    if eleccion1 == "izquierda":
-        print("Vas por el camino izquierdo y encuentras un río.")
-        print("¿Quieres cruzar el río o seguir caminando junto a él? (cruzar/seguir)")
+    if choice1 == "left":
+        print("You take the left path and find a river.")
+        print("Do you want to cross the river or follow it? (cross/follow)")
 
-        eleccion2 = input("> ").lower()
+        choice2 = input("> ").lower()
 
-        if eleccion2 == "cruzar":
-            print("Intentas cruzar el río, pero la corriente es fuerte y te lleva.")
-            print("¡Fin de la aventura! Mejor suerte la próxima vez.")
-        elif eleccion2 == "seguir":
-            print("Sigues el río y encuentras una aldea amigable.")
-            print("¡Has encontrado un lugar seguro! ¡Ganaste la aventura!")
+        if choice2 == "cross":
+            print("You try to cross the river, but the current is too strong and carries you away.")
+            print("You have drowned. The adventure is over! Better luck next time.")
+        elif choice2 == "follow":
+            print("You follow the river and find a friendly village.")
+            print("You’ve found a safe place! You won the adventure!")
         else:
-            print("Esa opción no es válida. Fin de la aventura.")
+            print("That option is not valid. The adventure is over.")
 
-    elif eleccion1 == "derecha":
-        print("Vas por el camino derecho y te encuentras con un lobo feroz.")
-        print("¿Quieres pelear o correr? (pelear/correr)")
+    elif choice1 == "right":
+        print("You take the right path and encounter a fierce wolf.")
+        print("Do you want to fight or run? (fight/run)")
 
-        eleccion2 = input("> ").lower()
+        choice2 = input("> ").lower()
 
-        if eleccion2 == "pelear":
-            print("Luchas valientemente, pero el lobo es muy fuerte.")
-            print("¡Fin de la aventura! Mejor suerte la próxima vez.")
-        elif eleccion2 == "correr":
-            print("Corres tan rápido que logras escapar.")
-            print("Encuentras la salida del bosque. ¡Ganaste la aventura!")
+        if choice2 == "fight":
+            print("You fight bravely, but the wolf is too strong.")
+            print("The adventure is over! Better luck next time.")
+        elif choice2 == "run":
+            print("You run as fast as you can and manage to escape.")
+            print("You find the way out of the forest. You won the adventure!")
         else:
-            print("Esa opción no es válida. Fin de la aventura.")
+            print("That option is not valid. The adventure is over.")
     else:
-        print("Esa opción no es válida. Fin de la aventura.")
+        print("That option is not valid. The adventure is over.")
 
 if __name__ == "__main__":
-    aventura()
+    adventure()
