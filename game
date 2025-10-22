@@ -1,46 +1,51 @@
-
-# Definición de los juegos
+# Definition of the games
 games = {}
-games['pong'] = {'año': '1984', 'genero': 'arcade', 'consola': 'atari'}
-games['alex kid 1 '] = {'año': '1990', 'genero': 'arcade', 'consola': 'atari'}
-games['soul reaver'] = {'año': '1996', 'genero': 'aventuras', 'consola': 'atari'}
-games['warzone'] = {'año': '2023', 'genero': 'Shoot them up', 'consola': 'atari'}
+games['pong'] = {'year': '1984', 'genre': 'arcade', 'console': 'atari'}
+games['alex kid 1 '] = {'year': '1990', 'genre': 'arcade', 'console': 'atari'}
+games['soul reaver'] = {'year': '1996', 'genre': 'adventure', 'console': 'atari'}
+games['warzone'] = {'year': '2023', 'genre': 'shoot them up', 'console': 'atari'}
 
-# Imprimir detalles de cada juego
+# Print details of each game
 for game, details in games.items():
-    año = details['año']
-    genero = details['genero']
-    consola = details['consola']
-    print(f"Juego: {game.title()}, Año: {año}, Género: {genero}, Consola: {consola}")
+    year = details['year']
+    genre = details['genre']
+    console = details['console']
+    print(f"Game: {game.title()}, Year: {year}, Genre: {genre}, Console: {console}")
 
-# Imprimir el año de cada juego
-pong='pong' #no es necesario crear nuevo valor... podriamos hacerlo con strings como se hace con los 2 restantes
-alex_kid='alex kid 1 '
-print(f"\nAño de {pong.title()}: {games['pong']['año']}")
-print(f"\nAño de {alex_kid.upper().rstrip()}: {games['alex kid 1 ']['año']}")
-print(f"Año de 'soul reaver': {games['soul reaver']['año']}")
-print(f"Año de 'warzone': {games['warzone']['año']}\n")
+# Print the year of each game
+pong = 'pong'  # not necessary to create a new value... we could just use strings like the other two
+alex_kid = 'alex kid 1 '
+print(f"\nYear of {pong.title()}: {games['pong']['year']}")
+print(f"\nYear of {alex_kid.upper().rstrip()}: {games['alex kid 1 ']['year']}")
+print(f"Year of 'soul reaver': {games['soul reaver']['year']}")
+print(f"Year of 'warzone': {games['warzone']['year']}\n")
 
-# Imprimir juegos más antiguos de 1990
-print("Juegos más antiguos de 1990:")
-oldest = False  # Bandera para verificar si se encontraron juegos antiguos
+# Print games older than 1990
+print("Games older than 1990:")
+oldest = False  # Flag to check if any old games are found
 
 for game, details in games.items():
-    if int(details['año']) < 2000:  # Filtrar juegos antes de 1991 la entrada int cambia el string en numero para poder ser empleado como numero ya que es un string en biblioteca
-        print(f"Juego: {game.title()}, Año: {details['año']}")
+    if int(details['year']) < 2000:  # Filter games before 2000; convert string to number
+        print(f"Game: {game.title()}, Year: {details['year']}")
         oldest = True
 
 if not oldest:
-    print("No hay juegos más antiguos de 1991.")
+    print("There are no games older than 1991.")
 
-# Imprimir los juegos que son de 1991 o más recientes
-print("\nJuegos de 1991 o más recientes:")
+# Print games from 1991 or newer
+print("\nGames from 1991 or newer:")
 for game, details in games.items():
-    if int(details['año']) >= 1991:  # Filtrar juegos de 1991 o más recientes
-        print(f"Juego: {game.title()}, Año: {details['año']}")
+    if int(details['year']) >= 1991:  # Filter games from 1991 or newer
+        print(f"Game: {game.title()}, Year: {details['year']}")
 
+# Count how many games are arcade
+arcade_games = [game for game, details in games.items() if details['genre'] == 'arcade']
 
-# Bucle para verificar el género de los juegos
-for game, details in games.items():
-    if details['genero'] == 'arcade':
-        print(f"\n{game.title()} eran los mejores juegos.")
+# Print with the correct form of "to be"
+if len(arcade_games) == 1:
+    print(f"{arcade_games[0].title()} was the best game.")
+elif len(arcade_games) > 1:
+    games_list = ', '.join([g.title() for g in arcade_games])
+    print(f"{games_list} were the best games.")
+else:
+    print("No arcade games found.")
