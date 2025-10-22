@@ -1,3 +1,4 @@
+
 # Definition of the games
 games = {}
 games['pong'] = {'year': '1984', 'genre': 'arcade', 'console': 'atari'}
